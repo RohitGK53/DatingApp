@@ -18,6 +18,8 @@ namespace WebApplication5.Controllers
         {
             _context = context;
         }
+        
+        [AllowAnonymous]
         // GET api/values
         [HttpGet]
         public async Task<IActionResult> GetValues()
@@ -26,7 +28,7 @@ namespace WebApplication5.Controllers
             return Ok(values);
         }
 
-        [AllowAnonymous]
+       [AllowAnonymous]
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
