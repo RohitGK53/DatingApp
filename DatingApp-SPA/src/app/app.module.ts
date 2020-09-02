@@ -31,6 +31,8 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -74,6 +76,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
+      ButtonsModule.forRoot(),
+      PaginationModule.forRoot(),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
