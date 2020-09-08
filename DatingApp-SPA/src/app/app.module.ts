@@ -34,6 +34,8 @@ import {TimeAgoPipe} from 'time-ago-pipe';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver.';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -61,6 +63,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
+      MemberMessagesComponent,
       TimeAgoPipe
    ],
    imports: [
@@ -94,6 +97,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberEditResolver,
       ListsResolver,
       PreventUnsavedChanges,
+      MessagesResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [
